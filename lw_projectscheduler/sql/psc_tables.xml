@@ -1,0 +1,120 @@
+<migration>
+<version>1</version>
+<up>
+<createTable name="psc_app">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="employee_id" type="number" size="20" />
+        <field name="app_id" type="number" size="20" />
+        <field name="dates" type="text" size="255" />
+        <field name="status" type="number" size="11" />
+        <field name="user_id" type="number" size="20" />
+    </fields>
+</createTable>
+
+<createTable name="psc_app_agr">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="title" type="text" size="255" />
+        <field name="begin_date" type="number" size="8" />
+        <field name="enddate" type="number" size="8" />
+        <field name="finaldate" type="number" size="8" />
+    </fields>
+</createTable>
+
+<createTable name="psc_appointments">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="nummer" type="text" size="255" />
+        <field name="title" type="text" size="255" />
+        <field name="begindate" type="number" size="8" />
+        <field name="enddate" type="number" size="8" />
+        <field name="location" type="text" size="255" />
+        <field name="responsible" type="text" size="255" />
+        <field name="description" type="text" size="255" />
+        <field name="description_index" type="number" size="11" />
+        <field name="descr_method" type="number" size="1" />
+        <field name="status" type="number" size="1" />
+    </fields>
+</createTable>
+
+<createTable name="psc_archive">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="nummer" type="text" size="255" />
+        <field name="title" type="text" size="255" />
+        <field name="begindate" type="number" size="8" />
+        <field name="enddate" type="number" size="8" />
+        <field name="location" type="text" size="255" />
+        <field name="responsible" type="text" size="255" />
+        <field name="description" type="text" size="255" />
+        <field name="description_index" type="number" size="11" />
+        <field name="categories" type="text" size="255" />
+    </fields>
+</createTable>
+
+<createTable name="psc_categories">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="name" type="text" size="255" />
+        <field name="status" type="text" size="255" />
+    </fields>
+</createTable>
+
+<createTable name="psc_category_agr">
+    <fields>
+        <field name="category_id" type="number" size="11" />
+        <field name="agr_id" type="number" size="11" />
+    </fields>
+</createTable>
+
+<createTable name="psc_category_app">
+    <fields>
+        <field name="category_id" type="number" size="11" />
+        <field name="appointment_id" type="number" size="11" />
+    </fields>
+</createTable>
+
+<createTable name="psc_category_tpl">
+    <fields>
+        <field name="category_id" type="number" size="11" />
+        <field name="template_id" type="number" size="11" />
+    </fields>
+</createTable>
+
+<createTable name="psc_employees">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="user_id" type="number" size="20" />
+        <field name="firstname" type="text" size="255" />
+        <field name="lastname" type="text" size="255" />
+    </fields>
+</createTable>
+
+<createTable name="psc_templates">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="title" type="text" size="255" />
+        <field name="entrycount" type="number" size="11" />
+        <field name="sorting" type="text" size="255" />
+        <field name="html" type="text" size="3999" />
+        <field name="status" type="number" size="11" />
+        <field name="misc" type="text" size="255" />
+    </fields>
+</createTable>
+
+<createTable name="psc_users">
+    <fields>
+        <field name="id" type="number" size="11" special="auto_increment" />
+        <field name="organisation" type="text" size="255" />
+        <field name="country" type="text" size="255" />
+        <field name="status" type="text" size="255" />
+        <field name="user_id" type="number" size="20" />
+    </fields>
+</createTable>
+
+</up>
+
+</migration>
+
+

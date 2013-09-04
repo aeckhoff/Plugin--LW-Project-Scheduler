@@ -1,0 +1,108 @@
+<script type="text/javascript" charset="utf-8">
+	function OpenEditWindow(id, height,url)
+	{ 
+		if (height < 100)
+		{
+			height = 450;
+		}
+		
+		chosenwindow = window.open(url , 'editEntry','width=550,height=' + height + ',location=no,resizable=no,scrollbars=auto,toolbars=no'); 
+	}
+	
+</script>
+
+<form name="theform" id="theform" action="<!-- lw:var actionurl -->" method="post">
+<input type="hidden" name="user_id" value="<!-- lw:var user_id -->">
+
+<h1>Partner Management</h1>
+
+
+<!-- lw:if admin -->
+<div class="buttonlist" style="padding-bottom:10px;">
+	[<a href="<!-- lw:var backurl -->">back to list</a>]
+</div>
+
+
+<div class="psc_title">
+	Activation
+</div>
+
+
+<div class="psc_input">
+	<input class="psc_ta" type="checkbox" name="status" value="active" <!-- lw:var active -->>&nbsp;active
+</div>
+
+
+
+<div class="psc_title">
+	Username
+</div>
+<div class="psc_input">
+	<!-- lw:var username -->
+</div>
+
+<div class="psc_title">
+	Organisation
+</div>
+<div class="psc_input">
+	<input class="psc_ta" type="text" name="organisation" value="<!-- lw:var organisation -->">
+</div>
+
+<div class="psc_title">
+	Country
+</div>
+<div class="psc_input">
+	<select class="psc_sl" name="country">
+		<!-- lw:var countryoptions -->
+	</select>
+</div>
+
+<!-- lw:endif admin -->
+
+<!-- lw:if user -->
+<div class="psc_title">
+	Username
+</div>
+<div class="psc_input">
+	<!-- lw:var username -->
+</div>
+
+<div class="psc_title">
+	Organisation
+</div>
+<div class="psc_input">
+	<!-- lw:var organisation -->
+</div>
+
+<div class="psc_title">
+	Country
+</div>
+<div class="psc_input">
+		<!-- lw:var country -->
+</div>
+<!-- lw:endif user -->
+
+<div class="psc_title">
+	Employees
+</div>
+<div class="psc_input">
+	<table style="margin-bottom:10px;">
+	<!-- lw:blockstart employees -->
+		
+		<tr>
+			<td>[<a href="<!-- lw:var editurl -->">edit]</a></td>
+			<td>[<a href="#" onClick="if (confirm('Do you really want to delete this entry?')) self.location.href='<!-- lw:var deleteurl -->';">delete</a>]</td>
+			<td><!-- lw:var employee --></td>
+		</tr>	
+	
+	<!-- lw:blockend employees -->
+	</table>
+	[<a href="<!-- lw:var addurl -->">Add Employee</a>]
+</div>
+<!-- lw:if admin -->
+<input type="submit" name="save" value=" Save ">
+<!-- lw:endif admin -->
+
+
+
+</form>

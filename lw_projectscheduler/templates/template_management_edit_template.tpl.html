@@ -1,0 +1,67 @@
+<h1>List</h1>
+
+<div class="buttonlist" style="padding-bottom:10px;">
+	[<a href="<!-- lw:var cancelurl -->">back to list</a>]
+</div>
+
+<form name="theform" id="theform" action="<!-- lw:var actionurl -->" method="post">
+<input type="hidden" name="tpl_id" value="<!-- lw:var id -->">
+
+
+<div class="psc_title">
+	Template ID
+</div>
+<div class="psc_input">
+	<!-- lw:var id -->
+</div>
+
+<div class="psc_title">
+	Title
+</div>
+<div class="psc_input">
+	<input class="psc_ta" type="text" name="title" value="<!-- lw:var title -->">
+</div>
+
+<div class="psc_title">
+	Categories
+</div>
+
+<div class="psc_input">
+	<table style="border:0px solid;"><tr><td>
+	<!-- lw:blockstart categories -->
+		<input type="checkbox" name="categories[]" value="<!-- lw:var cat_id -->" <!-- lw:var checked -->><!-- lw:var category_name --><br/>
+	<!-- lw:blockend categories -->
+	</td></tr></table>
+</div>
+
+<div class="psc_title">
+	Number of Entries
+</div>
+<div class="psc_input">
+	<select name="entrycount"><!-- lw:var entrycount --></select>
+</div>
+
+<div class="psc_title">
+	Sorting
+</div>
+<div class="psc_input">
+	<select name="sortby"><!-- lw:var sortby --></select><select name="sortdir"><!-- lw:var sortdir --></select>
+</div>
+
+<div class="psc_title">
+	HTML
+</div>
+
+<div class="psc_input">
+	<textarea name="html" style="width:400px;height:200px;"><!-- lw:var html --></textarea>
+</div>
+
+<div class="psc_title">
+	
+</div>
+<div class="psc_input">
+	<input type="submit" value="Save">
+</div>
+
+
+</form>

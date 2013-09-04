@@ -1,0 +1,66 @@
+
+
+
+<input type="hidden" name="matrix" value="1">
+<input type="hidden" name="daysc" value="<!-- lw:var daysc -->">
+	<table>
+	<tr>
+		<th>Organisation</th>
+		<th>Country</th>
+		<th>Employee</th>
+		<!-- lw:blockstart days -->
+		<th class="<!-- lw:var dayclass -->"><div title="<!-- lw:var weekday -->"><!-- lw:var day --></div></th>
+		<!-- lw:blockend days -->
+	</tr>
+	
+	<!-- lw:blockstart employees -->
+	<tr>
+		<td><!-- lw:var organisation --></td>
+		<td><!-- lw:var country --></td>
+		<td><!-- lw:var employee --></td>
+		<!-- lw:if caneditemp -->
+		<input type="hidden" name="employeeid[]" value="<!-- lw:var empid -->">
+		<!-- lw:endif caneditemp -->
+		<!-- lw:blockstart empdays -->
+			<!-- lw:if canedit -->
+			
+			<td class="<!-- lw:var class --> <!-- lw:var dayclass -->" id='<!-- lw:var empdayid -->' onClick="swap_emp('<!-- lw:var empdayid -->',<!-- lw:var empcount -->,<!-- lw:var daycount -->);"></td>
+			<!-- lw:endif canedit -->
+			<!-- lw:if cannotedit -->
+			<td class="<!-- lw:var class --> <!-- lw:var dayclass -->" id='<!-- lw:var empdayid -->' onClick=""></td>
+			<!-- lw:endif cannotedit -->
+			<input type="hidden" id='<!-- lw:var ehvid -->' name='<!-- lw:var ehv -->' value="<!-- lw:var ehvv -->">
+			
+		<!-- lw:blockend empdays -->
+		
+	</tr>
+	<!-- lw:blockend employees -->
+	
+	<tr>
+		<td colspan="3">Sum</td>
+		<!-- lw:blockstart sumdays -->
+			<td class="<!-- lw:var sumclass -->" id='<!-- lw:var sumday -->'></td>
+		<!-- lw:blockend sumdays -->
+	</td>
+	
+	<!-- lw:if admin -->
+	
+	<tr>
+		<td colspan="3">Date Start</td>
+		<!-- lw:blockstart startdays -->
+			<td><input type="radio" name="<!-- lw:var startday -->" value="<!-- lw:var value -->" <!-- lw:var sd_checked -->></td>
+		<!-- lw:blockend startdays -->
+	</tr>
+	
+	<tr>
+		<td colspan="3">Date End</td>
+		<!-- lw:blockstart enddays -->
+			<td><input type="radio" name="<!-- lw:var endday -->" value="<!-- lw:var value -->" <!-- lw:var ed_checked -->></td>
+		<!-- lw:blockend enddays -->
+	</tr>
+	
+	<!-- lw:endif admin -->
+	
+</table>
+&nbsp;<br>
+&nbsp;<br>

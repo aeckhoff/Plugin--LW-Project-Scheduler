@@ -1,0 +1,54 @@
+<!-- lw:if admin -->
+
+<style type="text/css" media="screen">
+
+#lw_general_plugin_error {
+	color:#ff0000;
+	font-family: Arial, sans-serif;
+	font-size:12px;
+	width:80%;
+	border-color:#ff0000;
+	border:2px solid;
+	background-color:#F8EDBD;
+	
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:10px;
+	padding-top:5px;
+}
+
+#lw_general_plugin_error_stacktrace {
+	background-color:#ffffff;
+	color:#000000;
+	padding:3px;
+	border:1px solid;
+}
+
+.lw_general_plugin_error_file {
+	color:#ff0000;
+	
+}
+.lw_general_plugin_error_line {
+	color:#0000ff;
+	font-weight:bold;
+}
+.lw_general_plugin_error_function {
+	color:#407A7E;
+	font-weight:bold;
+}
+</style>
+
+
+<div id='lw_general_plugin_error'>
+	<h1>Plugin-Error</h1>
+	<p><!-- lw:var plugin_error --></p>
+	<p><a style="color:#ff0000;" href="#" onClick="document.getElementById('lw_general_plugin_error_stacktrace').style.display='block';">Stacktrace</a></p>
+	<div id="lw_general_plugin_error_stacktrace" style="display:none;">
+		<!-- lw:var stacktrace -->
+	</div>
+</div>
+
+
+<!-- lw:endif admin -->
+
+<!-- PE -->

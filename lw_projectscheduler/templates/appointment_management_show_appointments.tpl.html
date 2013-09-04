@@ -1,0 +1,25 @@
+<h1>Appointment Management</h1>
+
+<table class="psc_table">
+	
+	<tr class="psc_tr">
+		<th class="psc_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th class="psc_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th class="psc_th">Date</th><th class="psc_th">Title</th><th class="psc_th">Category</th>
+	</tr>
+	
+	<!-- lw:blockstart appointments -->
+	
+	<tr class="<!-- lw:var rowclass -->">
+		<td class="psc_td">[<a href="<!-- lw:var editurl -->">edit</a>]</td>
+		<td class="psc_td">[<a href="#" onClick="if (confirm('Do you really want to delete this Appointment?')) self.location.href='<!-- lw:var deleteurl -->';">delete</a>]</td>
+		<td class="psc_td"><!-- lw:var date --></td>
+		<td class="psc_td"><!-- lw:var title --></td>
+		<td class="psc_td"><!-- lw:var category --></td>
+	</tr>
+	
+	<!-- lw:blockend appointments -->
+	
+</table>
+&nbsp;<br>
+<p>
+[<a href="<!-- lw:var addurl -->">Add new Appointment</a>]
+</p>

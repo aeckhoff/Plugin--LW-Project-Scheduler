@@ -1,0 +1,116 @@
+<style type="text/css" media="screen">
+	.nwday {
+		background-color:#d4d4d4;
+	}
+	.wday {
+		background-color:#ffffff;
+	}
+	.okay
+	{
+		background-color:#00ff00;
+	}
+	.not_okay
+	{
+		background-color:#ff0000;
+	}
+	.unknown
+	{
+		background-color:none;
+	}
+</style>
+
+<script type="text/javascript">
+	function swap_emp(id,empcount,daycount) {
+		document.getElementById("savediv").style.display = "block";
+		var e = document.getElementById(id);
+		var eh = document.getElementById(id+"_value");
+		var className = e.className.split(" ");
+		if (className[0] == "okay") {
+			e.className="not_okay"+" "+className[1];
+			eh.value = -1;
+			updateSum(empcount,daycount);
+			return;
+		}
+		if (className[0] == "not_okay") {
+			e.className="unknown"+" "+className[1];
+			eh.value = 0;
+			updateSum(empcount,daycount);
+			return;
+		}
+		if (className[0] == "unknown") {
+			e.className="okay"+" "+className[1];
+			eh.value = 1;
+			updateSum(empcount,daycount);
+			return;
+		}
+		
+	}
+	
+	function initPSC()
+	{
+		updateSum(<!-- lw:var empcount -->, <!-- lw:var daycount -->);
+	}
+	
+	function updateSum(empcount,daycount)
+	{
+		var i = 0;
+		var j = 0;
+		var sum = 0;
+		for(i=0;i<daycount;i++) {
+			var cn = "okay";
+			sum = 0;
+			for(j=1;j<(empcount+1);j++) {
+				
+				var name = document.getElementById("emp_"+j+"_"+i).className;
+				var className = name.split(" ");
+				if (className[0] == "not_okay") sum--;
+				if (className[0] == "unknown") sum = sum;
+				if (className[0] == "okay") sum++;
+			}
+			
+			if (sum == 0) cn = "unknown "+className[1];
+			if (sum > 0) cn = "okay "+className[1];
+			if (sum < 0) cn = "not_okay "+className[1];
+			
+			
+			
+			document.getElementById("sum_"+i).className = cn;
+		}
+	}
+
+
+
+
+function sendData()
+{
+	document.theform.submit();
+	
+	
+}
+</script>
+
+
+
+
+<h1><!-- lw:var title --></h1>
+
+<div class="buttonlist" style="padding-bottom:10px;">
+	[<a href="<!-- lw:var backurl -->">back to list</a>]
+</div>
+
+<form name="theform" id="theform" action="<!-- lw:var actionurl -->" method="post">
+<input type="hidden" name="agr_id" value="<!-- lw:var agr_id -->">
+<div id="popup">
+
+<p>Closing Date: <!-- lw:var finaldate -->
+
+<!-- lw:var matrix -->
+
+
+</div>
+
+<div id="savediv" style="display:none;">
+	<input type="submit" value=" Save Changes ">
+</div>
+
+</form>

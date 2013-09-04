@@ -1,0 +1,25 @@
+<h1>List Management</h1>
+
+<table class="psc_table">
+	
+	<tr class="psc_tr">
+		<th class="psc_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th class="psc_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th class="psc_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th class="psc_th">Title</th>
+	</tr>
+	
+	<!-- lw:blockstart templates -->
+	
+	<tr class="<!-- lw:var rowclass -->">
+		<td class="psc_td">[<a href="<!-- lw:var editurl -->">edit</a>]</td>
+		<td class="psc_td">[<a href="#" onClick="if (confirm('Do you really want to delete this List?')) self.location.href='<!-- lw:var deleteurl -->';">delete</a>]</td>
+		<td class="psc_td">[<a href="<!-- lw:var previewurl -->" target="_blank">preview</a>]</td>
+		<td class="psc_td"><!-- lw:var title --> (<!-- lw:var id -->)</td>
+	
+	</tr>
+	
+	<!-- lw:blockend templates -->
+	
+</table>
+&nbsp;<br>
+<p>
+[<a href="<!-- lw:var addurl -->">Add new List</a>]
+</p>

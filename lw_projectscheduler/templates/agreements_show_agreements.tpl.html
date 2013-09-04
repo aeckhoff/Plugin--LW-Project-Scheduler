@@ -1,0 +1,41 @@
+<h1>Date Agreements</h1>
+
+<table class="psc_table">
+	
+	
+	
+	<tr class="psc_tr">
+		<th class="psc_th">&nbsp;</th>
+		<!-- lw:if admin -->
+		<th class="psc_th">&nbsp;</th>
+		<!-- lw:endif admin -->
+		<th class="psc_th">Closing Date</th>
+		<th class="psc_th">Time Period</th>
+		<th class="psc_th">Categories</th>
+		<th class="psc_th">Title</th>
+	</tr>
+	
+	<!-- lw:blockstart agreements -->
+	
+	<tr class="<!-- lw:var rowclass -->">
+		<!-- lw:if admin -->
+		<td class="psc_td">[<a href="<!-- lw:var editurl -->">edit</a>]</td>
+		<td class="psc_td">[<a href="#" onClick="if (confirm('Do you really want to delete this Agreement?')) self.location.href='<!-- lw:var deleteurl -->';">delete</a>]</td>
+		<!-- lw:endif admin -->
+		<!-- lw:if user --><td class="psc_td">[<a href="<!-- lw:var showurl -->">edit</a>]</td><!-- lw:endif user -->
+		<td class="psc_td"><!-- lw:var finaldate --></td>
+		<td class="psc_td"><!-- lw:var timeperiod --></td>
+		<td class="psc_td"><!-- lw:var categories --></td>
+		<!-- lw:if admin --><td class="psc_td"><!-- lw:var title --></td><!-- lw:endif admin -->
+		<!-- lw:if user --><td class="psc_td"><!-- lw:var title --></td><!-- lw:endif user -->
+	</tr>
+	
+	<!-- lw:blockend agreements -->
+	
+</table>
+&nbsp;<br>
+<!-- lw:if admin -->
+<p>
+[<a href="<!-- lw:var addurl -->">Add new Date Agreement</a>]
+</p>
+<!-- lw:endif admin -->

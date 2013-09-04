@@ -1,0 +1,127 @@
+<style type="text/css" media="screen">
+	
+	body {
+		background-color:#EFF2F3;
+		font-family: Arial, sans-serif;
+	
+		font-size:12px;
+	}
+	
+	h1 {
+		color:#001497;
+		font-size:18px;
+	}
+	
+	table {
+		border: 1px solid;
+		border-collapse:collapse;
+		border-color:#C4C4C4;
+		font-size:12px;
+	}
+	
+	td {
+		text-align:left;
+		padding:3px;
+		border: 1px solid;
+		border-color:#C4C4C4;
+	}
+	
+	th {
+		text-align:left;
+		padding:3px;
+		border: 1px solid;
+		border-color:#C4C4C4;
+	}
+	
+	#psc {
+		width: 900px;
+		margin:auto;
+	}
+	#nav {
+		font-family: Arial, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		padding-top:12px;
+		padding-left:10px;
+		padding-bottom:4px;
+		
+		color:#ffffff;
+		background-image: url(pics/psc_head_nav.jpg);
+		
+	}
+	#nav a {
+		color:#ffffff;
+		text-decoration:none;
+	}
+	
+	#nav a:hover {
+		color:#FFF572;
+	}
+	
+	#main {
+		background-image: url(pics/psc_content.jpg);
+		padding:10px;
+		min-height:450px;
+	}
+	
+	#footer {
+		background-image: url(pics/psc_content_footer.jpg);
+		padding-bottom:13px;
+		padding-left:10px;
+		font-family: Arial, sans-serif;
+		font-size:10px;
+		
+	}
+	
+	.psc_title {
+		width:200px;
+		float: left;
+		margin-bottom:10px;
+	}
+	
+	.psc_input {
+		margin-bottom:10px;
+	}
+	
+	#popup {
+		width:500px;
+		background-color:#ffffff;
+		padding:10px;
+		border:1px solid;
+		border-color:#818181;
+	}
+	
+</style>
+
+<script type="text/javascript" charset="utf-8">
+	
+	function save()
+	{
+		document.theform.submit();
+	}
+	
+</script>
+
+<h1>Category</h1>
+
+<form name="theform" id="theform" action="<!-- lw:var actionurl -->" method="post">
+<input type="hidden" name="cat_id" value="<!-- lw:var cat_id -->">
+<div id="popup">
+
+<div class="psc_title">
+	Category Name
+</div>
+<div class="psc_input">
+	<input class="psc_ta" type="text" name="name" value="<!-- lw:var name -->">
+</div>
+
+<div class="psc_title">
+	<input type="button" value="Cancel" onClick="self.window.close();">
+</div>
+<div class="psc_input">
+	<input type="button" value="Save" onClick="save();">
+</div>
+
+</div>
+
+</form>

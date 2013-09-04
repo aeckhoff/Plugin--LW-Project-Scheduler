@@ -1,0 +1,40 @@
+<script type="text/javascript" charset="utf-8">
+	function OpenEditWindow(id, height,url)
+	{ 
+		if (height < 100)
+		{
+			height = 450;
+		}
+		
+		chosenwindow = window.open(url , 'editEntry','width=550,height=' + height + ',location=no,resizable=no,scrollbars=auto,toolbars=no'); 
+	}
+	
+</script>
+
+<h1>Category Management</h1>
+
+<table class="psc_table">
+	
+	
+	<tr class="psc_tr">
+		<th class="psc_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		<th class="psc_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		<th class="psc_th">Title</th>
+	</tr>
+	
+	<!-- lw:blockstart categories -->
+	
+	<tr class="<!-- lw:var rowclass -->">
+		<td class="psc_td">[<a href="#" onClick="OpenEditWindow(-1,250,'<!-- lw:var editurl -->');">edit</a>]</td>
+		<td class="psc_td"><!-- lw:if candelete -->[<a href="#" onClick="if (confirm('Do you really want to delete this Category?')) self.location.href='<!-- lw:var deleteurl -->';">delete</a>]<!-- lw:endif candelete --> <!-- lw:if used -->&nbsp;<!-- lw:endif used --></td>
+		<td class="psc_td"><!-- lw:var category --></td>
+		
+	</tr>
+	
+	<!-- lw:blockend categories -->
+	
+</table>
+&nbsp;<br>
+<p>
+[<a href="#" onClick="OpenEditWindow(-1,250,'<!-- lw:var addurl -->');">Add new Category</a>]
+</p>
